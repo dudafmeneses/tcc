@@ -3,7 +3,7 @@ const ConsultasController = require('../controllers/ConsultaController')
 
 // http:localhost:3001/consultas/
 router.get('/',ConsultasController.getAll)
-router.post('/',ConsultasController.createConsulta)
+router.post('/',ConsultasController.create)
 
 // http:localhost:3001/consultas/:id
 router.put('/:id', ConsultasController.editConsulta)

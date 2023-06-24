@@ -9,7 +9,7 @@ module.exports = class ConsultasController{
             res.status(500).json({message: "Erro ao pegar todas as consultas"})
         }
         }
-    static async getAll(req, res){
+    static async create(req, res){
         try{
             const {paciente, data, horário, desc} = req.body;
             // item obrigatório
@@ -24,12 +24,12 @@ module.exports = class ConsultasController{
             res.status(500).json({message: "Erro ao pegar todas as consultas"})
         }
         }
-        static async editProduct(req,res){
+        static async editConsulta(req,res){
             try {
-                const {nome,price,desc,disponivel} = req.body;
-                const consulta = await Product.findByIdAndUpdate(
+                const {paciente, data, horário, desc} = req.body;
+                const consulta = await Consulta.findByIdAndUpdate(
                     req.params.id,
-                    {nome,price,desc,disponivel} ,
+                    {paciente, data, horário, desc} ,
                     {new: true}
                 );
                 if(!consulta){
